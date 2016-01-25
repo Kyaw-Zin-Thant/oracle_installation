@@ -103,3 +103,9 @@ echo -n "-> Creating the Oracle listener ..."
 EOF
 
 /usr/bin/rm -rf /home/oracle/database
+
+rpm -ivh /vagrant/vagrant/oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm > /dev/null 2>&1
+rpm -ivh /vagrant/vagrant/oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm > /dev/null 2>&1
+
+ln -s /usr/include/oracle/11.2/client64 /usr/include/oracle/11.2/client
+ln -s /usr/lib/oracle/11.2/client64 /usr/lib/oracle/11.2/client
