@@ -38,10 +38,10 @@ cat << EOF | sudo tee -a /etc/profile.d/oracle.sh
 export TMP=/tmp
 
 export ORACLE_HOSTNAME=localhost
-export ORACLE_UNQNAME=ORA11G
+export ORACLE_UNQNAME=APEXTEST
 export ORACLE_BASE=/data/ora01/app/oracle
 export ORACLE_HOME=\$ORACLE_BASE/product/11.2.0/db_1
-export ORACLE_SID=ORA11G
+export ORACLE_SID=APEXTEST
 export PATH=\$PATH:\$ORACLE_HOME/bin
 export LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib;
 export CLASSPATH=\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib;
@@ -87,7 +87,7 @@ chown oracle:oinstall -R /home/oracle/database
 echo -en "-> Installing Oracle ...\n"
 su oracle <<EOF
 cd /home/oracle/database
-/home/oracle/database/runInstaller -silent -noconfig -waitforcompletion -ignorePrereq -responseFile /vagrant/vagrant/dotfiles/oracle_db_install.rsp > /dev/null 2>&1
+/home/oracle/database/runInstaller -silent -noconfig -waitforcompletion -ignorePrereq -responseFile /oracle_db_install.rsp > /dev/null 2>&1
 EOF
 source ~/.bashrc
 echo -e "... Execute /data/ora01/app/oraInventory/orainstRoot.sh\n"
@@ -99,7 +99,7 @@ source ~/.bashrc
 /usr/bin/su oracle <<EOF
 
 echo -n "-> Creating the Oracle listener ..."
- /data/ora01/app/oracle/product/11.2.0/db_1/bin/netca  /silent /responsefile /vagrant/vagrant/dotfiles/oracle_netca.rsp
+ /data/ora01/app/oracle/product/11.2.0/db_1/bin/netca  /silent /responsefile /oracle_netca.rsp
 EOF
 
 /usr/bin/rm -rf /home/oracle/database

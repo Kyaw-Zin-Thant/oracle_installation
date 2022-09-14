@@ -162,12 +162,12 @@ oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
 #------------------------------------------------------------------------------
 # Specify the Starter Database Global Database Name. 
 #------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.globalDBName=ORA11G
+oracle.install.db.config.starterdb.globalDBName=APEXTEST
 
 #------------------------------------------------------------------------------
 # Specify the Starter Database SID.
 #------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.SID=ORA11G
+oracle.install.db.config.starterdb.SID=APEXTEST
 
 #------------------------------------------------------------------------------
 # Specify the Starter Database character set.
@@ -182,7 +182,7 @@ oracle.install.db.config.starterdb.SID=ORA11G
 # ZHT16HKSCS, WE8ISO8859P9, TR8MSWIN1254, VN8MSWIN1258
 #------------------------------------------------------------------------------
 #oracle.install.db.config.starterdb.characterSet=AL32UTF8
-oracle.install.db.config.starterdb.characterSet=WE8ISO8859P15
+oracle.install.db.config.starterdb.characterSet=AL32UTF8
 
 #------------------------------------------------------------------------------
 # This variable should be set to true if Automatic Memory Management 
@@ -231,27 +231,27 @@ oracle.install.db.config.starterdb.enableSecuritySettings=true
 # This variable holds the password that is to be used for all schemas in the
 # starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.ALL=vagrant
+oracle.install.db.config.starterdb.password.ALL=oracle
 
 #-------------------------------------------------------------------------------
 # Specify the SYS password for the starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.SYS=vagrant
+oracle.install.db.config.starterdb.password.SYS=oracle
 
 #-------------------------------------------------------------------------------
 # Specify the SYSTEM password for the starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.SYSTEM=vagrant
+oracle.install.db.config.starterdb.password.SYSTEM=oracle
 
 #-------------------------------------------------------------------------------
 # Specify the SYSMAN password for the starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.SYSMAN=vagrant
+oracle.install.db.config.starterdb.password.SYSMAN=oracle
 
 #-------------------------------------------------------------------------------
 # Specify the DBSNMP password for the starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.DBSNMP=vagrant
+oracle.install.db.config.starterdb.password.DBSNMP=oracle
 
 #-------------------------------------------------------------------------------
 # Specify the management option to be selected for the starter database. 
