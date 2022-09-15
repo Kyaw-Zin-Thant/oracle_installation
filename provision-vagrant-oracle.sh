@@ -64,14 +64,14 @@ chmod 775 -R /data/ora01/app
 echo -e "-> Copy sources from srvDev\n Please Wait"
 
 echo -en "\t - Copy 1 of 2 ..."
-if [ ! -f /vagrant/vagrant/linux.x64_11gR2_database_1of2.zip ];
+if [ ! -f /home/Oracle/linux.x64_11gR2_database_1of2.zip ];
 then
 	echo -e " Error: You must dowload linux.x64_11gR2_database_1of2.zip"
 	exit 1
 fi
 
 echo -en "\t - Copy 2 of 2 ..."
-if [ ! -f /vagrant/vagrant/linux.x64_11gR2_database_2of2.zip ];
+if [ ! -f /home/Oracle/linux.x64_11gR2_database_2of2.zip ];
 then
 	echo -e " Error: You must dowload linux.x64_11gR2_database_2of2.zip"
 	exit 1
@@ -79,8 +79,8 @@ fi
 
 echo -e "-> extract oracle archives"
 
-unzip /vagrant/vagrant/linux.x64_11gR2_database_1of2.zip -d /home/oracle > /dev/null 2>&1
-unzip /vagrant/vagrant/linux.x64_11gR2_database_2of2.zip -d /home/oracle > /dev/null 2>&1
+unzip /home/Oracle/linux.x64_11gR2_database_1of2.zip -d /home/oracle > /dev/null 2>&1
+unzip /home/Oracle/linux.x64_11gR2_database_2of2.zip -d /home/oracle > /dev/null 2>&1
 
 chown oracle:oinstall -R /home/oracle/database
 
@@ -104,8 +104,8 @@ EOF
 
 /usr/bin/rm -rf /home/oracle/database
 
-rpm -ivh /vagrant/vagrant/oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm > /dev/null 2>&1
-rpm -ivh /vagrant/vagrant/oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm > /dev/null 2>&1
+rpm -ivh /home/Oracle/oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm > /dev/null 2>&1
+rpm -ivh /home/Oracle/oracle-instantclient11.2-devel-11.2.0.4.0-1.x86_64.rpm > /dev/null 2>&1
 
 ln -s /usr/include/oracle/11.2/client64 /usr/include/oracle/11.2/client
 ln -s /usr/lib/oracle/11.2/client64 /usr/lib/oracle/11.2/client
