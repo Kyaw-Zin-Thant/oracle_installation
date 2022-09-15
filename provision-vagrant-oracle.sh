@@ -39,7 +39,7 @@ export TMP=/tmp
 
 export ORACLE_HOSTNAME=localhost
 export ORACLE_UNQNAME=APEXTEST
-export ORACLE_BASE=/data/ora01/app/oracle
+export ORACLE_BASE=/u01/app/oracle
 export ORACLE_HOME=\$ORACLE_BASE/product/11.2.0/db_1
 export ORACLE_SID=APEXTEST
 export PATH=\$PATH:\$ORACLE_HOME/bin
@@ -56,9 +56,9 @@ EOF
 
 source ~/.bashrc
 
-mkdir -p /data/ora01/app/oracle/product/11.2.0/db_1
-chown oracle:oinstall -R /data/ora01/app
-chmod 775 -R /data/ora01/app
+mkdir -p /u01/app/oracle/product/11.2.0/db_1
+chown oracle:oinstall -R /u01/app
+chmod 775 -R /u01/app
 
 
 echo -e "-> Copy sources from srvDev\n Please Wait"
@@ -90,16 +90,16 @@ cd /home/oracle/database
 /home/oracle/database/runInstaller -silent -noconfig -waitforcompletion -ignorePrereq -responseFile /oracle_db_install.rsp > /dev/null 2>&1
 EOF
 source ~/.bashrc
-echo -e "... Execute /data/ora01/app/oraInventory/orainstRoot.sh\n"
-/data/ora01/app/oraInventory/orainstRoot.sh
+echo -e "... Execute /u01/app/oraInventory/orainstRoot.sh\n"
+/u01/app/oraInventory/orainstRoot.sh
 
-echo -e "... Execute /data/ora01/app/oracle/product/11.2.0/db_1/root.sh\n"
-/data/ora01/app/oracle/product/11.2.0/db_1/root.sh
+echo -e "... Execute /u01/app/oracle/product/11.2.0/db_1/root.sh\n"
+/u01/app/oracle/product/11.2.0/db_1/root.sh
 source ~/.bashrc
 /usr/bin/su oracle <<EOF
 
 echo -n "-> Creating the Oracle listener ..."
- /data/ora01/app/oracle/product/11.2.0/db_1/bin/netca  /silent /responsefile /oracle_netca.rsp
+ /u01/app/oracle/product/11.2.0/db_1/bin/netca  /silent /responsefile /oracle_netca.rsp
 EOF
 
 /usr/bin/rm -rf /home/oracle/database
