@@ -144,8 +144,8 @@ I18N_EOF
 	fi
 
 
-	unzip -o -qq linux.x64_11gR2_database_1of2.zip -d /home/${ORACLE_USER}
-	unzip -o -qq linux.x64_11gR2_database_2of2.zip -d /home/${ORACLE_USER}
+	unzip -o -qq /home/Oracle/linux.x64_11gR2_database_1of2.zip -d /home/${ORACLE_USER}
+	unzip -o -qq /home/Oracle/linux.x64_11gR2_database_2of2.zip -d /home/${ORACLE_USER}
 	chown -R ${ORACLE_USER}:${ORACLE_INSTALL_GROUP} /home/${ORACLE_USER}
 
 	sed -i -e 's%CV_ASSUME_DISTID=OEL4%CV_ASSUME_DISTID=OEL6%' /home/${ORACLE_USER}/database/stage/cvu/cv/admin/cvu_config
