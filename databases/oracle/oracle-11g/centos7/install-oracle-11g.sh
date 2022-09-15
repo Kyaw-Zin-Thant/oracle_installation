@@ -281,11 +281,7 @@ function install_scripts {
 }
 
 # Oracle makes it difficult to get their software. This is a very bad thing.
-if [[ ! -f linux.x64_11gR2_database_1of2.zip -o ! -f linux.x64_11gR2_database_2of2.zip ]]; then
-	println "Please download the Oracle 12c installation files from the following URL:"
-	println "http://download.oracle.com/otn/linux/oracle11g/R2/linux.x64_11gR2_database_1of2.zip"
-	println "http://download.oracle.com/otn/linux/oracle11g/R2/linux.x64_11gR2_database_2of2.zip"
-fi
+
 
 
 export -f preinstall
